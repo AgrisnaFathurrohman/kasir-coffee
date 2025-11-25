@@ -1,7 +1,8 @@
 # MyCafe
 
-MyCafe adalah aplikasi kasir berbasis web untuk mengelola transaksi penjualan, produk, dan laporan harian di sebuah kafe. Aplikasi ini mudah digunakan dan dirancang menyerupai sistem kasir pada umumnya di coffee shop.
+MyCafe adalah aplikasi kasir berbasis web yang dibangun menggunakan HTML, CSS, dan JavaScript tanpa backend. Project ini berfokus pada desain antarmuka (front-end) yang menampilkan halaman transaksi, daftar produk, dan laporan harian secara visual layaknya sistem kasir di coffee shop pada umumnya.
 
+Walaupun tidak terhubung ke database atau server, MyCafe tetap memberikan gambaran lengkap mengenai alur kerja kasir melalui tampilan yang interaktif dan mudah digunakan. Aplikasi ini cocok digunakan sebagai prototype, latihan front-end, atau konsep UI/UX untuk sistem kasir.
 
 ## 🙌 Tentang Aplikasi
 
