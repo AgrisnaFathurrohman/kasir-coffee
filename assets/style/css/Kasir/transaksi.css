@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f4ef;
+  color: #3e2723;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #6f4e37, #3e2723);
+  color: #f8f4ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+}
+
+.logo {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  color: #ffe8d6;
+  letter-spacing: 1px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.menu li:hover,
+.menu li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #d4a373;
+}
+
+.logout-btn {
+  background-color: #d4a373;
+  color: #3e2723;
+  border: none;
+  margin: 15px 20px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #b08968;
+  color: #fff;
+}
+
+/* ===== Main Layout ===== */
+.main-content {
+  margin-left: 240px;
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+header {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 26px;
+  color: #3e2723;
+}
+
+header p {
+  color: #7b5e57;
+  font-size: 14px;
+}
+
+/* ===== Order Section ===== */
+.order-section {
+  width: 100%;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.order-control label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#nomorPesanan {
+  padding: 10px;
+  border: 1px solid #d4a373;
+  border-radius: 10px;
+  width: 50%;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+#nomorPesanan:focus {
+  border-color: #6f4e37;
+  box-shadow: 0 0 5px rgba(111,78,55,0.3);
+}
+
+#btnPesananBaru {
+  background-color: #6f4e37;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btnPesananBaru:hover {
+  background-color: #b08968;
+}
+
+/* Daftar Pesanan */
+.daftar-pesanan {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pesanan-card {
+  background: #ffe8d6;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pesanan-card:hover,
+.pesanan-card.active {
+  background-color: #d4a373;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===== Produk Section ===== */
+.produk-section {
+  flex: 3;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d4a373;
+  margin-bottom: 15px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #6f4e37;
+  box-shadow: 0 0 5px rgba(111,78,55,0.3);
+}
+
+/* Produk Grid dengan Foto */
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.produk-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.produk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.produk-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.produk-card h4 {
+  font-size: 15px;
+  margin: 8px 0 2px;
+}
+
+.produk-card p {
+  color: #6f4e37;
+  font-weight: 600;
+}
+
+.produk-card button {
+  margin-top: 8px;
+  background-color: #6f4e37;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.produk-card button:hover {
+  background-color: #b08968;
+}
+
+/* ===== Keranjang ===== */
+.keranjang {
+  flex: 1.2;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.keranjang h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+#keranjangList {
+  max-height: 280px;
+  overflow-y: auto;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.keranjang-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  align-items: center;
+  font-size: 14px;
+}
+
+.keranjang-item small {
+  display: block;
+  color: #7b5e57;
+  font-size: 12px;
+}
+
+.keranjang-item button {
+  background: none;
+  border: none;
+  color: #a33;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.keranjang-item button:hover {
+  color: #e00;
+}
+
+.total {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: right;
+}
+
+.btn-simpan {
+  width: 100%;
+  background-color: #6f4e37;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-simpan:hover {
+  background-color: #b08968;
+}
+
+/* ===== Modal Pembayaran ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px 30px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: popUp 0.3s ease;
+}
+
+@keyframes popUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #3e2723;
+  font-size: 20px;
+}
+
+.modal-content select {
+  margin: 8px 0;
+  border: 1px solid #d4a373;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff8f0;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  transition: 0.3s;
+}
+
+.modal-content select:focus {
+  border-color: #6f4e37;
+  box-shadow: 0 0 5px rgba(111,78,55,0.3);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.btn-tambah {
+  background-color: #6f4e37;
+  color: white;
+}
+
+.btn-tambah:hover {
+  background-color: #b08968;
+}
+
+.btn-batal {
+  background-color: #ddd;
+}
+
+.btn-batal:hover {
+  background-color: #ccc;
+}
+
+/* Tambahkan ke file transaksi.css */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .keranjang {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .produk-section {
+    width: 100%;
+  }
+
+  header {
+    position: static;
+    margin-bottom: 15px;
+  }
+}

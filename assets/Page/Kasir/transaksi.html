@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCafe</title>
+    <link rel="stylesheet" href="/assets/style/css/Kasir/transaksi.css" />
+  </head>
+  <body>
+    <!-- ===== Sidebar ===== -->
+    <div class="sidebar">
+      <div class="logo">☕ <span>MY CAFE</span></div>
+      <ul class="menu">
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li class="active" onclick="window.location.href='transaksi.html'">
+          💰 Transaksi
+        </li>
+        <li onclick="window.location.href='pesanan.html'">📋 Pesanan</li>
+        <li onclick="window.location.href='laporan.html'">📊 Laporan</li>
+      </ul>
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <!-- ===== Main Content ===== -->
+    <div class="main-content">
+      <header>
+        <h1>💰 Transaksi Penjualan</h1>
+        <p>Catat pesanan pelanggan dengan cepat dan mudah ☕</p>
+      </header>
+
+      <!-- ===== Nomor Pesanan ===== -->
+      <section class="order-section">
+        <div class="order-control">
+          <label for="nomorPesanan">Nomor Pesanan:</label>
+          <input
+            type="number"
+            id="nomorPesanan"
+            placeholder="Masukkan nomor meja / order"
+            style="
+              padding: 8px;
+              border-radius: 6px;
+              border: 1px solid #ccc;
+              width: 50%;
+            "
+          />
+        </div>
+
+        <!-- Daftar pesanan aktif -->
+        <div class="daftar-pesanan" id="daftarPesanan">
+          <!-- Akan diisi via JS -->
+        </div>
+      </section>
+
+      <!-- ===== Produk Section ===== -->
+      <section class="produk-section">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari produk... (berdasarkan nama)"
+          />
+        </div>
+
+        <div class="produk-grid" id="produkList"></div>
+      </section>
+
+      <!-- ===== Keranjang Aktif ===== -->
+      <aside class="keranjang">
+        <h2>🛒 Keranjang Pesanan</h2>
+        <div id="keranjangList"></div>
+
+        <div class="total">
+          <p>Total: <span id="totalHarga">Rp 0</span></p>
+        </div>
+
+        <div class="pembayaran">
+          <label>Metode Pembayaran:</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="metodePembayaran" value="Tunai" />
+              💵 Tunai
+            </label>
+            <label>
+              <input type="radio" name="metodePembayaran" value="QRIS" />
+              📱 QRIS
+            </label>
+          </div>
+        </div>
+
+        <button class="btn-simpan" onclick="simpanPesanan()">
+          💾 Simpan Pesanan
+        </button>
+        <p class="info-text">
+          Pesanan yang disimpan akan muncul di halaman
+          <strong>Pesanan</strong> untuk diproses lebih lanjut.
+        </p>
+      </aside>
+    </div>
+
+    <!-- ===== Modal Pilihan Minuman ===== -->
+    <div class="modal" id="pilihanModal">
+      <div class="modal-content">
+        <h3>Opsi Minuman</h3>
+
+        <label for="pilihSuhu">Suhu Minuman:</label>
+        <select id="pilihSuhu">
+          <option value="Normal">Normal</option>
+          <option value="Dingin">Dingin</option>
+          <option value="Panas">Panas</option>
+        </select>
+
+        <label for="pilihGula">Tingkat Gula:</label>
+        <select id="pilihGula">
+          <option value="Normal">Tanpa Gula</option>
+          <option value="Normal">Normal</option>
+          <option value="Sedikit">Sedikit</option>
+          <option value="Manis">Manis</option>
+          <option value="Extra Manis">Extra Manis</option>
+        </select>
+
+        <div class="modal-buttons">
+          <button class="btn-tambah" onclick="konfirmasiPilihan()">
+            Tambah ke Keranjang
+          </button>
+          <button class="btn-batal" onclick="tutupModal()">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/style/js/Kasir/transaksi.js"></script>
+
+    <script>
+      // BuatPesananBaru hanya reset form
+      function buatPesananBaru() {
+        document.getElementById("nomorPesanan").value = "";
+        document.getElementById("keranjangList").innerHTML = "";
+        document.getElementById("totalHarga").textContent = "Rp 0";
+        alert("Silakan isi nomor pesanan dan tambahkan produk.");
+      }
+    </script>
+  </body>
+</html>

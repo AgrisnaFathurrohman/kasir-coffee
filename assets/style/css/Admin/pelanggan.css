@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f3ef;
+  display: flex;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #6f4e37, #3e2723);
+  color: #f8f4ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+  animation: slideInLeft 0.8s ease;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: #ffe8d6;
+}
+
+.logo span { color: #d4a373; }
+
+.menu { list-style: none; padding: 0; }
+
+.menu li {
+  padding: 14px 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 15px;
+  border-left: 4px solid transparent;
+}
+
+.menu li:hover,
+.menu li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #d4a373;
+  color: #ffe8d6;
+}
+
+.logout-btn {
+  background-color: #d4a373;
+  color: #3e2723;
+  border: none;
+  margin: 15px 20px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #b08968;
+  color: #fff;
+}
+
+/* ===== Main ===== */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 40px;
+}
+
+header h1 {
+  color: #4e342e;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #795548;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.actions input {
+  width: 65%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bca49b;
+  outline: none;
+}
+
+.actions button {
+  background: #795548;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #5d4037;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+}
+
+th {
+  background: #6d4c41;
+  color: #fff;
+}
+
+tr:nth-child(even) { background: #f5f0ec; }
+
+td button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 13px;
+}
+
+.edit { background: #6d4c41; }
+.delete { background: #d84315; }
+
+/* ===== Tombol Aksi (Edit & Hapus) ===== */
+.edit-btn, .delete-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Tombol Edit */
+.edit-btn {
+  background-color: #6d4c41; /* coklat tua */
+  color: #fff;
+}
+.edit-btn:hover {
+  background-color: #5d4037;
+  transform: scale(1.05);
+}
+
+/* Tombol Hapus */
+.delete-btn {
+  background-color: #d84315; /* merah bata */
+  color: #fff;
+  margin-left: 6px;
+}
+.delete-btn:hover {
+  background-color: #bf360c;
+  transform: scale(1.05);
+}
+
+/* ===== Efek Hover pada Baris Tabel ===== */
+.table-section tr:hover {
+  background-color: #f2e4da;
+  transition: background 0.3s ease;
+}
+
+/* ===== Teks Header Tabel ===== */
+th {
+  background-color: #6f4e37;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Font & Transisi Umum ===== */
+body, button, input, select {
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+}
+
+
+/* ===== Badge Member ===== */
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+}
+.badge.regular { background: #8d6e63; }
+.badge.silver { background: #b0bec5; color: #333; }
+.badge.gold { background: #d4af37; color: #3e2723; }
+.badge.vip { background: #8e24aa; }
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content input, select {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin: 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#saveCustomer { background: #6d4c41; color: #fff; }
+#cancelCustomer { background: #ccc; }
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

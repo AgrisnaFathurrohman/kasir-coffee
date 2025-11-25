@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyCafe</title>
+  <link rel="stylesheet" href="/assets/style/css/Admin/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- ===== Sidebar ===== -->
+<div class="sidebar">
+  <div class="logo">☕ <span>MY CAFE</span></div>
+  <ul class="menu">
+    <li class="active" onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+    <li onclick="window.location.href='produk.html'">📦 Produk</li>
+    <li onclick="window.location.href='laporan.html'">📊 Laporan</li>
+    <li onclick="window.location.href='pelanggan.html'">👥 Pelanggan</li>
+  </ul>
+  <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+</div>
+
+
+  <!-- ===== Main Content ===== -->
+  <div class="main-content">
+    <header>
+      <div class="header-left">
+        <h1>Selamat Datang, Admin!</h1>
+        <p>Kelola operasional coffee shop Anda dengan mudah ☕</p>
+      </div>
+      <div class="header-right">
+        <span class="notif">🔔</span>
+        <div class="profile">👤 Admin</div>
+      </div>
+    </header>
+
+    <!-- ===== Cards ===== -->
+    <section class="cards">
+      <div class="card">
+        <h3>Transaksi Hari Ini</h3>
+        <p>Rp 2.500.000</p>
+      </div>
+      <div class="card">
+        <h3>Produk Terjual</h3>
+        <p>120 item</p>
+      </div>
+      <div class="card">
+        <h3>Pelanggan</h3>
+        <p>35 orang</p>
+      </div>
+      <div class="card">
+        <h3>Stok Habis</h3>
+        <p>5 produk</p>
+      </div>
+    </section>
+
+    <!-- ===== Grafik Penjualan ===== -->
+    <section class="chart-section">
+      <h2>Grafik Penjualan Mingguan</h2>
+      <canvas id="salesChart"></canvas>
+    </section>
+
+    <!-- ===== Riwayat Transaksi ===== -->
+    <section class="table-section">
+      <h2>Transaksi Terbaru</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tanggal</th>
+            <th>Kasir</th>
+            <th>Total</th>
+            <th>Metode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>19/10/2025</td><td>Dita</td><td>Rp 45.000</td><td>Cash</td></tr>
+          <tr><td>2</td><td>19/10/2025</td><td>Rian</td><td>Rp 82.000</td><td>QRIS</td></tr>
+          <tr><td>3</td><td>19/10/2025</td><td>Ana</td><td>Rp 36.000</td><td>Cash</td></tr>
+          <tr><td>4</td><td>18/10/2025</td><td>Reza</td><td>Rp 150.000</td><td>QRIS</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- ===== Script ===== -->
+  <script>
+    // Fungsi logout
+    function logout() {
+      localStorage.clear();
+      window.location.href = "/index.html";
+    }
+  </script>
+  <script src="/assets/style/js/Admin/akses-login.js"></script>
+  <script src="/assets/style/js/Admin/component.js"></script>
+</body>
+</html>

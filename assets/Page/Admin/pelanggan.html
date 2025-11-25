@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCafe</title>
+    <link rel="stylesheet" href="/assets/style/css/Admin/pelanggan.css" />
+  </head>
+  <body>
+    <!-- ===== Sidebar ===== -->
+    <div class="sidebar">
+      <div class="logo">☕ <span>MY CAFE</span></div>
+      <ul class="menu">
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li onclick="window.location.href='produk.html'">📦 Produk</li>
+        <li onclick="window.location.href='laporan.html'">📊 Laporan</li>
+        <li class="active" onclick="window.location.href='pelanggan.html'">
+          👥 Pelanggan
+        </li>
+      </ul>
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <!-- ===== Main Content ===== -->
+    <div class="main-content">
+      <header>
+        <h1>Data Pelanggan</h1>
+        <p>Kelola informasi pelanggan tetap & pelanggan baru ☕</p>
+      </header>
+
+      <!-- ===== Actions ===== -->
+      <section class="actions">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Cari nama pelanggan..."
+        />
+        <button id="addCustomerBtn">➕ Tambah Pelanggan</button>
+      </section>
+
+      <!-- ===== Table ===== -->
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>No. Telepon</th>
+              <th>Email</th>
+              <th>Tipe Member</th>
+              <th>Diskon</th>
+              <th>Total Transaksi</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="customerTableBody"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- ===== Modal (Tambah/Edit) ===== -->
+    <div class="modal" id="customerModal">
+      <div class="modal-content">
+        <h2 id="modalTitle">Tambah Pelanggan</h2>
+        <input type="text" id="customerName" placeholder="Nama Pelanggan" />
+        <input type="text" id="customerPhone" placeholder="Nomor Telepon" />
+        <input type="email" id="customerEmail" placeholder="Email (opsional)" />
+        <select id="customerMember">
+          <option value="Regular">Regular</option>
+          <option value="Silver">Silver (5%)</option>
+          <option value="Gold">Gold (10%)</option>
+          <option value="VIP">VIP (15%)</option>
+        </select>
+        <div class="modal-buttons">
+          <button id="saveCustomer">Simpan</button>
+          <button id="cancelCustomer">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/style/js/Admin/pelanggan.js"></script>
+  </body>
+</html>

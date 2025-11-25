@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCafe</title>
+    <link rel="stylesheet" href="/assets/style/css/Admin/laporan.css" />
+  </head>
+  <body>
+    <!-- ===== Sidebar ===== -->
+    <div class="sidebar">
+      <div class="logo">☕ <span>MY CAFE</span></div>
+      <ul class="menu">
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li onclick="window.location.href='produk.html'">📦 Produk</li>
+        <li class="active" onclick="window.location.href='laporan.html'">📊 Laporan</li>
+        <li onclick="window.location.href='pelanggan.html'">👥 Pelanggan</li>
+      </ul>
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <!-- ===== Main Content ===== -->
+    <div class="main-content">
+      <header>
+        <h1>Laporan Penjualan</h1>
+        <p>Analisis transaksi dan performa penjualan harian ☕</p>
+      </header>
+
+      <section class="filter-section">
+        <div class="filters">
+          <input type="date" id="filterDate" />
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari nama produk..."
+          />
+          <button id="resetFilter">🔄 Reset</button>
+        </div>
+
+        <div class="summary">
+          <div class="card">
+            <h3>Total Transaksi</h3>
+            <p id="totalTransaksi">0</p>
+          </div>
+          <div class="card">
+            <h3>Total Pendapatan</h3>
+            <p id="totalPendapatan">Rp 0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Nama Produk</th>
+              <th>Jumlah</th>
+              <th>Harga</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="laporanTableBody">
+            <!-- Data laporan akan dimasukkan lewat JS -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <script src="/assets/style/js/Admin/laporan.js"></script>
+  </body>
+</html>

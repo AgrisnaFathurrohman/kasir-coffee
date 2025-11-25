@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCafe</title>
+    <link rel="stylesheet" href="/assets/style/css/Admin/produk.css" />
+  </head>
+  <body>
+    <!-- ===== Sidebar ===== -->
+    <div class="sidebar">
+      <div class="logo">☕ <span>MY CAFE</span></div>
+      <ul class="menu">
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li class="active" onclick="window.location.href='produk.html'">
+          📦 Produk
+        </li>
+        <li onclick="window.location.href='laporan.html'">📊 Laporan</li>
+        <li onclick="window.location.href='pelanggan.html'">👥 Pelanggan</li>
+      </ul>
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <!-- ===== Main Content ===== -->
+    <div class="main-content">
+      <header>
+        <h1>📦 Kelola Produk</h1>
+        <p>Tambah, ubah, atau hapus menu kopi & makanan Anda</p>
+      </header>
+
+      <section class="actions">
+        <input type="text" id="search" placeholder="🔍 Cari produk..." />
+        <button id="addProductBtn">➕ Tambah Produk</button>
+      </section>
+
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nama Produk</th>
+              <th>Harga</th>
+              <th>Kategori</th>
+              <th>Varian</th>
+              <th>Stok</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- ===== Modal Produk ===== -->
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <h2 id="modalTitle">Tambah Produk</h2>
+
+        <!-- 🔹 Gambar Produk -->
+        <label for="productImage"><strong>Gambar Produk:</strong></label>
+        <input type="file" id="productImage" accept="image/*" />
+        <p style="text-align: center; margin: 5px 0">atau</p>
+        <input
+          type="text"
+          id="productImagePath"
+          placeholder="contoh: assets/images/espresso.jpg"
+        />
+
+        <!-- 🔹 Nama & Harga -->
+        <input type="text" id="productName" placeholder="Nama produk" />
+        <input type="number" id="productPrice" placeholder="Harga (Rp)" />
+
+        <!-- 🔹 Kategori & Varian -->
+        <select id="productCategory">
+          <option value="" disabled selected>Pilih Kategori</option>
+          <option value="Minuman">Minuman</option>
+          <option value="Makanan">Makanan</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+
+        <select id="productVariant" disabled>
+          <option value="" disabled selected>Pilih Varian</option>
+        </select>
+
+        <!-- 🔹 Stok -->
+        <input type="number" id="productStock" placeholder="Stok" />
+
+        <!-- 🔹 Tombol -->
+        <div class="modal-buttons">
+          <button id="saveProduct">💾 Simpan</button>
+          <button id="cancelProduct">❌ Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/style/js/Admin/akses-login.js"></script>
+    <script src="/assets/style/js/Admin/produk.js"></script>
+  </body>
+</html>

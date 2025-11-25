@@ -1,0 +1,213 @@
+/* ====== RESET DASAR ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== BODY (LATAR BELAKANG) ====== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #3e2723, #6d4c41);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeInBody 1.2s ease-in-out;
+}
+
+/* Efek masuk untuk background */
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ====== KONTAINER LOGIN ====== */
+.login-container {
+  background-color: #f8f4f0;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  text-align: center;
+  animation: slideUp 1.2s ease-out;
+  transition: all 0.3s ease;
+}
+
+/* Animasi saat kontainer muncul */
+@keyframes slideUp {
+  0% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ====== LOGO (IKON CAANGKIR KOPI) ====== */
+.login-container::before {
+  content: "☕";
+  display: block;
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #6d4c41;
+  animation: bounceIn 1.5s ease;
+}
+
+/* Animasi masuk logo */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ====== TEKS JUDUL ====== */
+.login-container h2 {
+  color: #4e342e;
+  margin-bottom: 25px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  animation: fadeInText 1.6s ease;
+}
+
+/* Animasi halus teks */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== INPUT ====== */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #d7ccc8;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background-color: #fffaf5;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInInput 1.5s ease forwards;
+}
+
+.login-container input:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.login-container input:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInInput {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.login-container input:focus {
+  border-color: #795548;
+  box-shadow: 0 0 8px rgba(121, 85, 72, 0.5);
+  transform: scale(1.02);
+}
+
+/* ====== TOMBOL LOGIN ====== */
+.login-container button {
+  width: 100%;
+  background-color: #6d4c41;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInButton 1.8s ease forwards;
+}
+
+@keyframes fadeInButton {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.login-container button:hover {
+  background-color: #5d4037;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== PESAN ERROR ====== */
+.error {
+  color: #d32f2f;
+  margin-top: 10px;
+  font-size: 13px;
+  min-height: 20px;
+  animation: fadeInText 1s ease;
+}
+
+/* ====== RESPONSIF ====== */
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  .login-container {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .login-container::before {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-container {
+    width: 380px;
+  }
+}

@@ -1,0 +1,213 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f4ef;
+  color: #3e2723;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #6f4e37, #3e2723);
+  color: #f8f4ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  color: #ffe8d6;
+  letter-spacing: 1px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.menu li:hover,
+.menu li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #d4a373;
+}
+
+.logout-btn {
+  background-color: #d4a373;
+  color: #3e2723;
+  border: none;
+  margin: 15px 20px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #b08968;
+  color: #fff;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  margin-left: 240px;
+  padding: 30px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f4ef;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #4e342e;
+}
+
+header p {
+  font-size: 15px;
+  color: #6d4c41;
+  margin-top: 5px;
+}
+
+/* ===== FILTER SECTION ===== */
+.filter-section {
+  margin: 25px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section label {
+  font-weight: 500;
+}
+
+.filter-section input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.filter-section input[type="date"]:focus {
+  border-color: #8d6e63;
+}
+
+.filter-section button {
+  background-color: #6f4e37;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.filter-section button:hover {
+  background-color: #8d6e63;
+}
+
+/* ===== TABLE SECTION ===== */
+.laporan-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+thead {
+  background-color: #6f4e37;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s;
+}
+
+tbody tr:hover {
+  background-color: #fff8f0;
+}
+
+/* ===== TOTAL PENDAPATAN ===== */
+.total-pendapatan {
+  margin-top: 25px;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
+  font-weight: 600;
+  color: #4e342e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-pendapatan span {
+  color: #6f4e37;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .filter-section {
+    flex-wrap: wrap;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}

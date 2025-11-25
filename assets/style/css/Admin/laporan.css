@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f3ef;
+  display: flex;
+}
+
+/* ===== Sidebar (Sama seperti dashboard) ===== */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #6f4e37, #3e2723);
+  color: #f8f4ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+  animation: slideInLeft 0.8s ease;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: #ffe8d6;
+}
+
+.logo span { color: #d4a373; }
+
+.menu { list-style: none; padding: 0; }
+
+.menu li {
+  padding: 14px 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 15px;
+  border-left: 4px solid transparent;
+}
+
+.menu li:hover,
+.menu li.active {
+  background-color: rgba(255,255,255,0.1);
+  border-left: 4px solid #d4a373;
+  color: #ffe8d6;
+}
+
+.logout-btn {
+  background-color: #d4a373;
+  color: #3e2723;
+  border: none;
+  margin: 15px 20px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.logout-btn:hover { background-color: #b08968; color: #fff; }
+
+/* ===== Main ===== */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 30px 40px;
+  animation: fadeIn 1s ease;
+}
+
+header h1 {
+  color: #3e2723;
+  font-size: 26px;
+}
+
+header p {
+  color: #6f4e37;
+  margin-bottom: 25px;
+}
+
+/* ===== Filter Section ===== */
+.filter-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+  animation: fadeInUp 0.7s ease;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters input, .filters button {
+  padding: 10px;
+  border: 1px solid #d0b8a8;
+  border-radius: 8px;
+  outline: none;
+}
+
+.filters button {
+  background-color: #6f4e37;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filters button:hover {
+  background-color: #5d4037;
+}
+
+/* ===== Summary ===== */
+.summary {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #6f4e37;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.card h3 { font-weight: 500; }
+.card p { font-size: 20px; font-weight: 600; margin-top: 8px; }
+
+/* ===== Table ===== */
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #6f4e37;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f7f3ef;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideInLeft {
+  from {transform: translateX(-100%);}
+  to {transform: translateX(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
