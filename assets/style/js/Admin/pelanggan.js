@@ -1,6 +1,6 @@
 function logout() {
   localStorage.clear();
-  window.location.href = "/index.html";
+  window.location.href = "../../../../index.html";
 }
 // Fungsi navigasi aman (biar ga error di file local)
 function navigate(page) {

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== LOGOUT =====
   window.logout = function () {
     localStorage.clear();
-    window.location.href = "/index.html";
+  window.location.href = "../../../../index.html";
   };
 
   // ===== DATA PESANAN =====
