@@ -58,14 +58,6 @@ document.getElementById("productImage").addEventListener("change", function() {
   }
 });
 
-// Gunakan path gambar dari folder assets/
-document.getElementById("productImagePath").addEventListener("input", function() {
-  const path = this.value.trim();
-  if (path) {
-    imageData = path;
-  }
-});
-
 // ==== Simpan Produk ====
 saveBtn.addEventListener("click", () => {
   const name = document.getElementById("productName").value;
@@ -149,13 +141,13 @@ function clearModal() {
 
 // ==== Contoh Produk Awal ====
 const sampleProducts = [
-  {name: "Kopi Hitam", price: 15000, category: "Minuman", variant: "Panas", stock: 20, img: "/assets/images/kopi-hitam.jpg"},
-  {name: "Cappuccino", price: 20000, category: "Minuman", variant: "Panas", stock: 20, img: "/assets/images/cappucinno.jpg"},
-  {name: "Esoresso", price: 18000, category: "Minuman", variant: "Panas", stock: 20, img: "/assets/images/expresso.jpg"},
-  {name: "Matcha Latte", price: 25000, category: "Minuman", variant: "Panas", stock: 20, img: "/assets/images/matcha-latte.jpg"},
-  {name: "Ikan Bakar", price: 12500, category: "Makanan", variant: "Pedas", stock: 20, img: "/assets/images/ikan-bakar.jpg"},
-  {name: "Americano", price: 17000, category: "Minuman", variant: "Panas", stock: 20, img: "/assets/images/americano.jpg"},
-  {name: "Mie Goreng", price: 20000, category: "Makanan", variant: "Pedas", stock: 20, img: "/assets/images/mie-goreng.jpg"},
+  {name: "Kopi Hitam", price: 15000, category: "Minuman", variant: "Panas", stock: 20, img: "../../images/kopi-hitam.jpg"},
+  {name: "Cappuccino", price: 20000, category: "Minuman", variant: "Panas", stock: 20, img: "../../images/cappucinno.jpg"},
+  {name: "Esoresso", price: 18000, category: "Minuman", variant: "Panas", stock: 20, img: "../../images/expresso.jpg"},
+  {name: "Matcha Latte", price: 25000, category: "Minuman", variant: "Panas", stock: 20, img: "../../images/matcha-latte.jpg"},
+  {name: "Ikan Bakar", price: 12500, category: "Makanan", variant: "Pedas", stock: 20, img: "../../images/ikan-bakar.jpg"},
+  {name: "Americano", price: 17000, category: "Minuman", variant: "Panas", stock: 20, img: "../../images/americano.jpg"},
+  {name: "Mie Goreng", price: 20000, category: "Makanan", variant: "Pedas", stock: 20, img: "../../images/mie-goreng.jpg"},
 ];
 
 sampleProducts.forEach(p => {
@@ -191,8 +183,3 @@ searchInput.addEventListener("input", () => {
     }
   }
 });
-
-function logout() {
-  localStorage.clear();
-  window.location.href = "/index.html";
-}

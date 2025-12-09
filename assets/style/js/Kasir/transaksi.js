@@ -5,13 +5,13 @@ let produkDipilih = null;
 
 // ====== DATA PRODUK (dengan stok dan kategori) ======
 let produk = JSON.parse(localStorage.getItem("dataProduk")) || [
-  { id: 1, nama: "Kopi Hitam", harga: 15000, stok: 20, kategori: "minuman", gambar: "/assets/images/kopi-hitam.jpg" },
-  { id: 2, nama: "Cappuccino", harga: 20000, stok: 20, kategori: "minuman", gambar: "/assets/images/cappucinno.jpg" },
-  { id: 3, nama: "Espresso", harga: 18000, stok: 20, kategori: "minuman", gambar: "/assets/images/expresso.jpg" },
-  { id: 4, nama: "Matcha Latte", harga: 25000, stok: 20, kategori: "minuman", gambar: "/assets/images/matcha-latte.jpg" },
-  { id: 5, nama: "Ikan Bakar", harga: 12000, stok: 20, kategori: "makanan", gambar: "/assets/images/ikan-bakar.jpg" },
-  { id: 6, nama: "Americano", harga: 17000, stok: 20, kategori: "minuman", gambar: "/assets/images/americano.jpg" },
-  { id: 7, nama: "Mie Goreng", harga: 20000, stok: 20, kategori: "makanan", gambar: "/assets/images/mie-goreng.jpg" },
+  { id: 1, nama: "Kopi Hitam", harga: 15000, stok: 20, kategori: "minuman", gambar: "../../images/kopi-hitam.jpg" },
+  { id: 2, nama: "Cappuccino", harga: 20000, stok: 20, kategori: "minuman", gambar: "../../images/cappucinno.jpg" },
+  { id: 3, nama: "Espresso", harga: 18000, stok: 20, kategori: "minuman", gambar: "../../images/expresso.jpg" },
+  { id: 4, nama: "Matcha Latte", harga: 25000, stok: 20, kategori: "minuman", gambar: "../../images/matcha-latte.jpg" },
+  { id: 5, nama: "Ikan Bakar", harga: 12000, stok: 20, kategori: "makanan", gambar: "../../images/ikan-bakar.jpg" },
+  { id: 6, nama: "Americano", harga: 17000, stok: 20, kategori: "minuman", gambar: "../../images/americano.jpg" },
+  { id: 7, nama: "Mie Goreng", harga: 20000, stok: 20, kategori: "makanan", gambar: "../../images/mie-goreng.jpg" },
 ];
 
 // ====== FUNGSI TAMPIL PRODUK ======
@@ -269,7 +269,3 @@ function simpanPesanan() {
 // ====== INISIALISASI ======
 document.addEventListener("DOMContentLoaded", tampilkanProduk);
 
-window.logout = function () {
-  localStorage.clear();
-  window.location.href = "/index.html";
-};

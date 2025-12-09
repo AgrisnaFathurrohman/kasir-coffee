@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../../images/logo.png" type="image/png" />
     <title>MyCafe</title>
-    <link rel="stylesheet" href="/assets/style/css/Kasir/dashboard.css" />
+    <link rel="stylesheet" href="../../style/css/Kasir/dashboard.css" />
   </head>
   <body>
     <!-- ===== Sidebar ===== -->
@@ -44,7 +44,12 @@
       </section>
     </div>
 
-    <!-- Hubungkan file JS -->
-    <script src="/assets/style/js/Kasir/dashboard.js"></script>
+    <script>
+      function logout() {
+        localStorage.clear();
+        window.location.href = "../../../index.html";
+      }
+    </script>
+    <script src="../../style/js/Kasir/dashboard.js"></script>
   </body>
 </html>

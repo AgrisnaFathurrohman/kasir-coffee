@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../../images/logo.png" type="image/png" />
     <title>MyCafe</title>
-    <link rel="stylesheet" href="/assets/style/css/Admin/produk.css" />
+    <link rel="stylesheet" href="../../style/css/Admin/produk.css" />
   </head>
   <body>
     <!-- ===== Sidebar ===== -->
@@ -60,12 +60,6 @@
         <!-- 🔹 Gambar Produk -->
         <label for="productImage"><strong>Gambar Produk:</strong></label>
         <input type="file" id="productImage" accept="image/*" />
-        <p style="text-align: center; margin: 5px 0">atau</p>
-        <input
-          type="text"
-          id="productImagePath"
-          placeholder="contoh: assets/images/espresso.jpg"
-        />
 
         <!-- 🔹 Nama & Harga -->
         <input type="text" id="productName" placeholder="Nama produk" />
@@ -94,6 +88,12 @@
       </div>
     </div>
 
-    <script src="/assets/style/js/Admin/produk.js"></script>
+    <script>
+      function logout() {
+        localStorage.clear();
+        window.location.href = "../../../index.html";
+      }
+    </script>
+    <script src="../../style/js/Admin/produk.js"></script>
   </body>
 </html>
