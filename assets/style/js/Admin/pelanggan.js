@@ -1,7 +1,3 @@
-function goTo(page) {
-  window.location.href = `/assets/pages/Admin/${page}`;
-}
-
 function logout() {
   localStorage.clear();
   window.location.href = "/index.html";
