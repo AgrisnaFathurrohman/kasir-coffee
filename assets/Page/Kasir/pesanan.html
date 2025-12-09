@@ -19,7 +19,9 @@
         </li>
         <li onclick="window.location.href='laporan.html'">📊 Laporan</li>
       </ul>
-      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+      <a href="../../../index.html">
+        <button class="logout-btn">🚪 Logout</button>
+      </a>
     </div>
 
     <!-- Main Content -->
@@ -43,13 +45,6 @@
         <!-- Data pesanan akan dimuat via JS -->
       </section>
     </div>
-
-    <script>
-      function logout() {
-        localStorage.clear();
-        window.location.href = "../../../index.html";
-      }
-    </script>
     <script src="../../style/js/Kasir/pesanan.js"></script>
   </body>
 </html>

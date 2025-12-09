@@ -20,7 +20,9 @@
         <li onclick="window.location.href='laporan.html'">📊 Laporan</li>
         <li onclick="window.location.href='pelanggan.html'">👥 Pelanggan</li>
       </ul>
-      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+      <a href="../../../index.html">
+        <button class="logout-btn">🚪 Logout</button>
+      </a>
     </div>
 
     <!-- ===== Main Content ===== -->
@@ -110,13 +112,6 @@
     </div>
 
     <!-- ===== Script ===== -->
-    <script>
-      // Fungsi logout
-      function logout() {
-        localStorage.clear();
-        window.location.href = "../../../index.html";
-      }
-    </script>
     <script src="../../style/js/Admin/component.js"></script>
   </body>
 </html>

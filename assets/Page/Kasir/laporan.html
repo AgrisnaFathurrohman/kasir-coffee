@@ -19,7 +19,9 @@
           📊 Laporan
         </li>
       </ul>
-      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+      <a href="../../../index.html">
+        <button class="logout-btn">🚪 Logout</button>
+      </a>
     </div>
 
     <!-- ===== Main Content ===== -->
@@ -62,13 +64,6 @@
         <h3>Total Pendapatan: <span id="totalPendapatan">Rp 0</span></h3>
       </div>
     </div>
-
-    <script>
-      function logout() {
-        localStorage.clear();
-        window.location.href = "../../../index.html";
-      }
-    </script>
     <script src="../../style/js/Kasir/laporan.js"></script>
   </body>
 </html>
