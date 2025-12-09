@@ -30,6 +30,7 @@ MyCafe/
 ├── /assets/
 │   │
 │   ├── /images/                
+│   │   ├── logo.png
 │   │   ├── kopi-hitam.jpg
 │   │   ├── cappucinno.jpg
 │   │   ├── expresso.jpg
